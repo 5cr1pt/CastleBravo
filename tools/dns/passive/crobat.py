@@ -4,15 +4,15 @@
 import shlex
 import subprocess
 from libs.readfile import readfile
-import os 
+import os
 
 
 class crobat(object):
     def __init__(self,target,tmpPath):
-        self.target = target 
+        self.target = target
         self.tmpPath = tmpPath + '.txt'
-        self.crobatToolPath   = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/tool/crobat'
-    
+        self.crobatToolPath   = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/tools/crobat'
+
     def runProccess(self):
         print('[ - ] Running crobat...')
         command = '{toolPath} -s {target}'.format(

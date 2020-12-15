@@ -4,15 +4,15 @@
 import shlex
 import subprocess
 from libs.readfile import readfile
-import os 
+import os
 
 
 class github(object):
     def __init__(self,target,tmpPath):
-        self.target = target 
+        self.target = target
         self.tmpPath = tmpPath + '.txt'
-        self.githubToolPath   = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/tool/github-subdomains.py'
-    
+        self.githubToolPath   = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/tools/github-subdomains.py'
+
     def runProccess(self):
         print('[ - ] Running github...')
         command = 'python3 {toolPath} -d {target} -e'.format(

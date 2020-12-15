@@ -4,16 +4,16 @@
 import shlex
 import subprocess
 from libs.readfile import readfile
-import os 
+import os
 
 
 class subfinder(object):
     def __init__(self,target,tmpPath):
-        self.target = target 
+        self.target = target
         self.tmpPath = tmpPath + '.txt'
         self.subfinderConfigPath = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/tools/config.yaml'
-        self.subfinderToolPath   = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/tool/subfinder'
-    
+        self.subfinderToolPath   = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/tools/subfinder'
+
     def runProccess(self):
         print('[ - ] Running subfinder...')
         command = '{toolPath} -d {target} -config {configPath} -o {tmpPath}'.format(
